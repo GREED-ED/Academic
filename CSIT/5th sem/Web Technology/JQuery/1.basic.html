@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>jQuery Effects</title>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+
+<button id="showBtn">Show</button>
+<button id="hideBtn">Hide</button>
+<button id="fadeInBtn">Fade In</button>
+<button id="fadeOutBtn">Fade Out</button>
+<button id="slideUpBtn">Slide Up</button>
+<button id="slideDownBtn">Slide Down</button>
+
+<div id="box" style="width:200px; height:100px; background-color:skyblue; margin-top:20px; display:none;"></div>
+
+<script>
+  $(document).ready(function(){
+    $('#showBtn').click(function(){ $('#box').show(); });
+    $('#hideBtn').click(function(){ $('#box').hide(); });
+    $('#fadeInBtn').click(function(){ $('#box').fadeIn(); });
+    $('#fadeOutBtn').click(function(){ $('#box').fadeOut(); });
+    $('#slideUpBtn').click(function(){ $('#box').slideUp(); });
+    $('#slideDownBtn').click(function(){ $('#box').slideDown(); });
+  });
+</script>
+
+</body>
+</html>

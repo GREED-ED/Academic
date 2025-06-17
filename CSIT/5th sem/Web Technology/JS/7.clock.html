@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>Simple Digital Clock</h2>
+<div id="clock" style="font-size:24px; font-family: monospace;"></div>
+
+<script>
+function updateClock() {
+  const now = new Date();
+  let h = now.getHours().toString().padStart(2, '0');
+  let m = now.getMinutes().toString().padStart(2, '0');
+  let s = now.getSeconds().toString().padStart(2, '0');
+
+  document.getElementById('clock').textContent = `${h}:${m}:${s}`;
+}
+
+// update clock every second
+setInterval(updateClock, 1000);
+
+// initialize immediately
+updateClock();
+</script>
+
+</body>
+</html>

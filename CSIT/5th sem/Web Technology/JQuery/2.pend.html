@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>jQuery Append/Prepend</title>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+
+<div id="content">Original content.</div>
+<br>
+<button id="appendBtn">Append Text</button>
+<button id="prependBtn">Prepend Text</button>
+
+<script>
+  $(document).ready(function(){
+    $('#appendBtn').click(function(){
+      $('#content').append(' <strong>Paxadi</strong>');
+    });
+
+    $('#prependBtn').click(function(){
+      $('#content').prepend('<strong>Agadhi </strong>');
+    });
+  });
+</script>
+
+</body>
+</html>

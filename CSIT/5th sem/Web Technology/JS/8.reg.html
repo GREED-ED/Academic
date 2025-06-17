@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>Email & Password Validation Form</h2>
+
+<form onsubmit="return validateForm()">
+  Email: <input type="text" id="email" /><br><br>
+  Password: <input type="password" id="password" /><br><br>
+  <input type="submit" value="Submit" />
+</form>
+
+<p id="message" style="color:red;"></p>
+
+<script>
+function validateForm() {
+  const email = document.getElementById("email").value.trim();
+  const password = document.getElementById("password").value.trim();
+  const message = document.getElementById("message");
+
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  const passwordRegex = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
+
+  if (!emailRegex.test(email)) {
+    message.textContent = "Invalid email format.";
+    return false;
+  }
+
+  if (!passwordRegex.test(password)) {
+    message.textContent = "Password must be at least 8 characters long and include uppercase, lowercase, number, and special character.";
+    return false;
+  }
+
+  alert("✅ Email and Password are valid!");
+  return true; // Allow form submission
+}
+</script>
+
+</body>
+</html>

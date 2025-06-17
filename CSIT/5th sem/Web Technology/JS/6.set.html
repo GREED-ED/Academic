@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>JavaScript Timers (Simplified)</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+      max-width: 600px;
+      margin: auto;
+    }
+    .output {
+      margin: 10px 0;
+      padding: 10px;
+      background: #f1f1f1;
+      border-radius: 5px;
+    }
+    button {
+      margin: 5px;
+      padding: 8px 12px;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>JavaScript Timers</h1>
+
+  <!-- 1. setTimeout -->
+  <h2>1. setTimeout</h2>
+  <button onclick="showMessage()">Show Message</button>
+  <div id="timeoutResult" class="output"></div>
+
+  <!-- 2. setInterval Clock -->
+  <h2>2. setInterval Clock</h2>
+  <div id="clock" class="output">--:--:--</div>
+
+  <!-- 3. Countdown using setTimeout -->
+  <h2>3. Countdown</h2>
+  <button onclick="startCountdown()">Start Countdown</button>
+  <div id="count" class="output">3</div>
+
+  <script>
+    // 1. setTimeout example
+    function showMessage() {
+      const output = document.getElementById("timeoutResult");
+      output.textContent = "Please wait...";
+      setTimeout(() => {
+        output.textContent = "Hello after 2 seconds!";
+      }, 2000);
+    }
+
+    // 2. setInterval Clock
+    function updateClock() {
+      const now = new Date();
+      document.getElementById("clock").textContent = now.toLocaleTimeString();
+    }
+    setInterval(updateClock, 1000);
+    updateClock(); // Call once immediately
+
+    // 3. Countdown using multiple setTimeout
+    function startCountdown() {
+      let count = 3;
+      const display = document.getElementById("count");
+
+      display.textContent = count;
+      setTimeout(() => { display.textContent = --count; }, 1000);
+      setTimeout(() => { display.textContent = --count; }, 2000);
+      setTimeout(() => { display.textContent = "Go!"; }, 3000);
+      setTimeout(() => { display.textContent = "3"; }, 4000); // Reset
+    }
+  </script>
+
+</body>
+</html>

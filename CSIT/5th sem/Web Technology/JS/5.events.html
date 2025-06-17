@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>JavaScript Events Demo</title>
+  <style>
+    #box {
+      width: 150px;
+      height: 150px;
+      background-color: lightblue;
+      margin: 20px;
+      padding: 10px;
+      border: 2px solid blue;
+      text-align: center;
+      line-height: 150px;
+      font-weight: bold;
+      user-select: none;
+    }
+  </style>
+</head>
+<body>
+
+<h2>JavaScript Events Demo</h2>
+
+<!-- Button with click event -->
+<button onclick="alert('Button clicked!')">Click Me (onclick)</button>
+
+<!-- Div for mouse events -->
+<div id="box" 
+     onclick="boxClicked()" 
+     ondblclick="boxDoubleClicked()" 
+     onmouseover="boxMouseOver()" 
+     onmouseout="boxMouseOut()">
+  Hover or Click Me
+</div>
+
+<!-- Input for keyboard events -->
+<input type="text" id="inputBox" placeholder="Type here" 
+       onfocus="inputFocused()" 
+       onblur="inputBlurred()" 
+       onkeydown="keyDown(event)" 
+       onkeyup="keyUp(event)" 
+       onkeypress="keyPress(event)"/>
+
+<!-- Window-level events -->
+<p id="status"></p>
+
+<script>
+// Click event
+function boxClicked() {
+  alert("Div clicked!");
+}
+
+// Double click event
+function boxDoubleClicked() {
+  alert("Div double clicked!");
+}
+
+// Mouse over event
+function boxMouseOver() {
+  const box = document.getElementById('box');
+  box.style.backgroundColor = 'lightgreen';
+  box.textContent = 'Mouse Over!';
+}
+
+// Mouse out event
+function boxMouseOut() {
+  const box = document.getElementById('box');
+  box.style.backgroundColor = 'lightblue';
+  box.textContent = 'Hover or Click Me';
+}
+
+// Input focus event
+function inputFocused() {
+  document.getElementById('status').textContent = "Input box focused";
+}
+
+// Input blur event (when input loses focus)
+function inputBlurred() {
+  document.getElementById('status').textContent = "Input box lost focus";
+}
+
+// Keydown event (key pressed down)
+function keyDown(event) {
+  document.getElementById('status').textContent = "Key down: " + event.key;
+}
+
+// Keyup event (key released)
+function keyUp(event) {
+  document.getElementById('status').textContent = "Key up: " + event.key;
+}
+
+// Keypress event (key pressed and character produced)
+function keyPress(event) {
+  console.log("Key press detected: " + event.key);
+}
+
+// Window load event
+window.onload = function() {
+  console.log("Page fully loaded");
+  document.getElementById('status').textContent = "Page loaded";
+};
+
+</script>
+
+</body>
+</html>
+    

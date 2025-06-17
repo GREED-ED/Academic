@@ -8,7 +8,7 @@
 | 5   | Architecture        | [🔗 Architecture](./CSIT/3rd%20sem/Architecture) |   
 | 6   | DSA                 | [🔗 DSA](./CSIT/3rd%20sem/DSA) |
 | 7   | Graphics            | [🔗 Graphics](./CSIT/3rd%20sem/Graphics)  |
-| 8   | NM                  | [🔗 NM Clock](./CSIT/3rd%20sem/NM) |   
+| 8   | NM                  | [🔗 NM](./CSIT/3rd%20sem/NM) |   
 | 9   | Statistics II       | [🔗 Statistics](./CSIT/3rd%20sem/Statistics%20II) |      
 | 10   | AI                 | [🔗 AI](./CSIT/4th%20sem/AI) |     
 | 11   | Network            | [🔗 Network](./CSIT/4th%20sem/CN) |     
